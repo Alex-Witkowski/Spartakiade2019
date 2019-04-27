@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayApp.Android", "HolidayApp\HolidayApp.Android\HolidayApp.Android.csproj", "{135FBF4D-00F2-41CB-9EBF-E7258A751367}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayApp.iOS", "HolidayApp\HolidayApp.iOS\HolidayApp.iOS.csproj", "{6390BAF3-8995-46BF-AF5E-6F45EE2B7017}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayApp", "HolidayApp\HolidayApp\HolidayApp.csproj", "{92E158DE-D983-4EE5-8405-F7BF9302C202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolidayApp", "HolidayApp\HolidayApp\HolidayApp.csproj", "{92E158DE-D983-4EE5-8405-F7BF9302C202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayApp.Api", "HolidayApp.Api\HolidayApp.Api.csproj", "{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{92E158DE-D983-4EE5-8405-F7BF9302C202}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{92E158DE-D983-4EE5-8405-F7BF9302C202}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{92E158DE-D983-4EE5-8405-F7BF9302C202}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|iPhone.Build.0 = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A939AFFE-BCF6-45BD-8646-7ED9EB8D3A39}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
