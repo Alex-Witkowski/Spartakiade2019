@@ -22,7 +22,7 @@ namespace HolidayApp.ApiManagement
 
         public Task<List<NagerHoliday>> GetHolidaysAsync(string countryCode, string year)
         {
-            return _apiClient.GetAsync<List<NagerHoliday>>($"PublicHolidays/{countryCode}/{year}");
+            return _apiClient.GetAsync<List<NagerHoliday>>($"PublicHolidays/{year}/{countryCode}");
         }
 
         public Task<List<NagerHoliday>> GetNextPublicHolidaysAsync(string countryCode)
