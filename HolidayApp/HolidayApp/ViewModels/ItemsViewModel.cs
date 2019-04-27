@@ -55,6 +55,8 @@ namespace HolidayApp.ViewModels
             {
                 IsBusy = false;
             }
+
+            MessagingCenter.Send(this, "FirstPageLoaded");
         }
     }
 }

@@ -8,6 +8,7 @@ namespace HolidayApp
 {
     public partial class App : Application
     {
+        private SlowService services;
 
         public App()
         {
@@ -15,6 +16,7 @@ namespace HolidayApp
 
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+            services = new SlowService();
         }
 
         protected override void OnStart()
