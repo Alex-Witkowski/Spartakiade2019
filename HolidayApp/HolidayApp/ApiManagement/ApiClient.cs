@@ -9,11 +9,9 @@ namespace HolidayApp.ApiManagement
     {
         private HttpClient _httpClient;
 
-        public ApiClient(string baseurl)
+        public ApiClient(HttpClient httpClient)
         {
-            _httpClient = new HttpClient();
-
-            _httpClient.BaseAddress = new Uri(baseurl);
+            _httpClient = httpClient ?? throw new ArgumentNullException();
         }
         
         public async Task<TModel> GetAsync<TModel>(string resource)

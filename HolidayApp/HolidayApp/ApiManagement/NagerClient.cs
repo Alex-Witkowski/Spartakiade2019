@@ -12,7 +12,7 @@ namespace HolidayApp.ApiManagement
 
         public NagerClient()
         {
-            _apiClient = new ApiClient(_v2);            
+            _apiClient = new ApiClient(new System.Net.Http.HttpClient() { BaseAddress = new System.Uri(_v2)});            
         }
 
         public Task<List<NagerCountry>> GetAvailableCountriesAsync()
