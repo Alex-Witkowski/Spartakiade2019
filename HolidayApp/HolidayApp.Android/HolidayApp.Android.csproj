@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -102,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HolidayApp\HolidayApp.csproj">
-      <Project>{C873ABA9-2592-4032-A778-50E25B213940}</Project>
+      <Project>{92E158DE-D983-4EE5-8405-F7BF9302C202}</Project>
       <Name>HolidayApp</Name>
     </ProjectReference>
   </ItemGroup>
