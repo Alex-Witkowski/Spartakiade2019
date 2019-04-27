@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using HolidayApp.ApiManagement;
 using HolidayApp.Models;
+using SmartBusyIndicator;
 
 namespace HolidayApp.ViewModels
 {
@@ -35,21 +36,24 @@ namespace HolidayApp.ViewModels
         private async void GetHolidays()
         {
             IsBusy = true;
-            await Task.Delay(5000);
-
-            var client = new NagerClient();
-
-            var result = await client.GetHolidaysAsync(Item.Id, "2019");
-
-            Holidays = new ObservableCollection<NagerHoliday>();
-
-            foreach (var item in result)
+            
+            using (BusyHandler.Activate())
             {
-                Holidays.Add(item);
+                await Task.Delay(5000);
+
+                var client = new NagerClient();
+
+                var result = await client.GetHolidaysAsync(Item.Id, "2019");
+
+                Holidays = new ObservableCollection<NagerHoliday>();
+
+                foreach (var item in result)
+                {
+                    Holidays.Add(item);
+                }
             }
 
             
-
             IsBusy = false;
 
         }

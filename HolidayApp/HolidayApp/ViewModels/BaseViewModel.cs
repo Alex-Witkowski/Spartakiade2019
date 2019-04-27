@@ -7,12 +7,27 @@ using Xamarin.Forms;
 
 using HolidayApp.Models;
 using HolidayApp.Services;
+using SmartBusyIndicator;
 
 namespace HolidayApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+
+        public BaseViewModel()
+        {
+            BusyHandler = new BusyHandler();
+        }
+
+
+        private BusyHandler busyHandler;
+        public BusyHandler BusyHandler
+        {
+            get { return busyHandler; }
+            set { SetProperty(ref busyHandler, value); }
+        }
+
 
         bool isBusy = false;
         public bool IsBusy
