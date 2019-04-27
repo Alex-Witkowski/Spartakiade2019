@@ -7,7 +7,7 @@ namespace HolidayApp.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        private IEnumerable<Weekend> longWeekends;
+        private IEnumerable<Holiday> holidays;
 
         public Country Item { get; set; }
 
@@ -16,14 +16,14 @@ namespace HolidayApp.ViewModels
             Title = item?.key;
             Item = item;
         }
-        public IEnumerable<Weekend> LongWeekends
+        public IEnumerable<Holiday> Holidays
         {
-            get => longWeekends;
+            get => holidays;
             set
             {
-                if (longWeekends != value)
+                if (holidays != value)
                 {
-                    longWeekends = value;
+                    holidays = value;
                     OnPropertyChanged();
                 }
             }
@@ -32,7 +32,7 @@ namespace HolidayApp.ViewModels
         public async void LoadData()
         {
             var client = new Client();
-            LongWeekends = await client.GetLongWeekends(DateTime.Now.Year, Item.key);
+            Holidays = await client.GetPublicHolidays(DateTime.Now.Year, Item.key);
         }
     }
 }

@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage Visual="Material"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:apiManagement="clr-namespace:HolidayApp.Api;assembly=HolidayApp.Api"
              x:Class="HolidayApp.Views.ItemDetailPage"
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <CollectionView ItemsSource="{Binding LongWeekends}">
+        <CollectionView ItemsSource="{Binding Holidays}">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type apiManagement:Weekend}">
+                <DataTemplate x:DataType="{x:Type apiManagement:Holiday}">
                     <Frame HasShadow="False">
                         <StackLayout>
-                            <Label Text="{Binding startDate}"/>
-                            <Label Text="{Binding endDate}"/>
+                            <Label Text="{Binding localName}"/>
+                            <Label Text="{Binding date}"/>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

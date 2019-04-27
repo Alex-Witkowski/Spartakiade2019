@@ -48,18 +48,17 @@ namespace HolidayApp.Api
         public string value { get; set; }
     }
 
-
     public class Holiday
     {
-        public DateTime date { get; set; }
+        public string date { get; set; }
         public string localName { get; set; }
         public string name { get; set; }
         public string countryCode { get; set; }
         public bool _fixed { get; set; }
         public bool global { get; set; }
-        public string[] counties { get; set; }
-        public int launchYear { get; set; }
-        public int type { get; set; }
+        public object counties { get; set; }
+        public int? launchYear { get; set; }
+        public string type { get; set; }
     }
 
 
