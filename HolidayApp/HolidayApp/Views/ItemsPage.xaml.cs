@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HolidayApp.Api;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +26,7 @@ namespace HolidayApp.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as Country;
             if (item == null)
                 return;
 

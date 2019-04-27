@@ -1,5 +1,5 @@
 ﻿using System;
-
+using HolidayApp.Api;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,18 +19,11 @@ namespace HolidayApp.Views
             BindingContext = this.viewModel = viewModel;
         }
 
-        public ItemDetailPage()
+        protected override void OnAppearing()
         {
-            InitializeComponent();
+            base.OnAppearing();
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
-
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+            viewModel.LoadData();
         }
     }
 }
