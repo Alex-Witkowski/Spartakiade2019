@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using HolidayApp.Models;
 using HolidayApp.Views;
+using HolidayApp.ApiManagement;
 
 namespace HolidayApp.ViewModels
 {
@@ -36,13 +37,26 @@ namespace HolidayApp.ViewModels
 
             IsBusy = true;
 
+
+            var client = new NagerClient();
+
+            var result = await client.GetAvailableCountriesAsync();
+
+
             try
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                foreach (var item in result)
                 {
-                    Items.Add(item);
+                    var keks = new Item
+                    {
+                        Text = item.key,
+                        Description = item.value,
+                        Id = item.key
+                    };
+
+                    Items.Add(keks);
                 }
             }
             catch (Exception ex)
