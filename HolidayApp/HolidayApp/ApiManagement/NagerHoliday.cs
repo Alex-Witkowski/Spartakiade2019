@@ -15,7 +15,7 @@ namespace HolidayApp.ApiManagement
         public bool isfixed { get; set; }
         public bool global { get; set; }
         public List<string> counties { get; set; }
-        public int launchYear { get; set; }
+        public int? launchYear { get; set; }
         public string type { get; set; }
     }
 }

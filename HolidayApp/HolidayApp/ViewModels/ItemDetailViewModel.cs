@@ -9,7 +9,20 @@ namespace HolidayApp.ViewModels
         public Item Item { get; set; }
 
 
-        public ObservableCollection<NagerHoliday> Holidays { get; set; }
+        private ObservableCollection<NagerHoliday> _holiday;
+
+        public ObservableCollection<NagerHoliday> Holidays
+        {
+            get { return _holiday; }
+            set
+            {
+                if(value != _holiday)
+                {
+                    _holiday = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public ItemDetailViewModel(Item item = null)
         {
