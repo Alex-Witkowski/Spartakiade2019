@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HolidayApp.ApiManagement
@@ -17,13 +15,7 @@ namespace HolidayApp.ApiManagement
 
             _httpClient.BaseAddress = new Uri(baseurl);
         }
-
-        public void SetBaseUrl(string baseUrl)
-        {
-            _httpClient.BaseAddress = new Uri(baseUrl);
-        }
-
-
+        
         public async Task<TModel> GetAsync<TModel>(string resource)
         {
             if (string.IsNullOrWhiteSpace(resource))
