@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 using HolidayApp.Models;
 using HolidayApp.Views;
-using HolidayApp.Api;
+using HolidayApp.ApiManagement;
 
 namespace HolidayApp.ViewModels
 {
@@ -37,14 +37,25 @@ namespace HolidayApp.ViewModels
 
             IsBusy = true;
 
+
+            var client = new NagerClient();
+
+            var result = await client.GetAvailableCountriesAsync();
+
             try
             {
                 Items.Clear();
-                var client = new Client();
-                var countries = await client.GetAvailableCountriesAsync();
-                foreach (var country in countries)
+
+                foreach (var item in result)
                 {
-                    Items.Add(new Item { Id = country.key, Text = country.value, Description= country.key});
+                    var keks = new Item
+                    {
+                        Text = item.key,
+                        Description = item.value,
+                        Id = item.key
+                    };
+
+                    Items.Add(keks);
                 }
             }
             catch (Exception ex)
