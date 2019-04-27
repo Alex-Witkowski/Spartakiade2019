@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using HolidayApp.Models;
 using HolidayApp.Views;
+using HolidayApp.Api;
 
 namespace HolidayApp.ViewModels
 {
@@ -39,10 +40,11 @@ namespace HolidayApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                var client = new Client();
+                var countries = await client.GetAvailableCountriesAsync();
+                foreach (var country in countries)
                 {
-                    Items.Add(item);
+                    Items.Add(new Item { Id = country.key, Text = country.value, Description= country.key});
                 }
             }
             catch (Exception ex)
