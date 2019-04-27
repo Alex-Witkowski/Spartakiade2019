@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HolidayApp.Views.ItemDetailPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}" >
+
+    <Grid>
 
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Text:" FontSize="Medium" />
@@ -11,31 +13,33 @@
         <Label Text="{Binding Item.Description}" FontSize="Small"/>
 
 
-        <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Holidays}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding name}" 
+        <CollectionView ItemsSource="{Binding Holidays}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type apiManagement:NagerLongWeekend}">
+                    <StackLayout>
+                        <Frame HasShadow="True" Margin="10" >
+                            <StackLayout>
+                                <Label Text="{Binding name}" 
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding date}" 
+                                <Label Text="{Binding date}" 
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
     </StackLayout>
 
+
+        <ActivityIndicator VerticalOptions="Center" HorizontalOptions="Center" IsRunning="{Binding IsBusy}"/>
+
+    </Grid>
 
 </ContentPage>
