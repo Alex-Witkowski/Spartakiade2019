@@ -43,5 +43,14 @@ namespace HolidayApp.ApiManagement
 
             return _apiClient.GetAsync<List<NagerHoliday>>($"NextPublicHolidaysWorldwide");
         }
+
+        //LongWeekend
+
+        public Task<List<NagerLongWeekend>> GetLongWeekendAsync(string countryCode, string year)
+        {
+            _apiClient.SetBaseUrl(_v2);
+
+            return _apiClient.GetAsync<List<NagerLongWeekend>>($"LongWeekend/{year}/{countryCode}");
+        }
     }
 }
