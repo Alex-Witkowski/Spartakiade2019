@@ -42,11 +42,10 @@ namespace HolidayApp.ViewModels
 
             var result = await client.GetAvailableCountriesAsync();
 
-
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+
                 foreach (var item in result)
                 {
                     var keks = new Item

@@ -18,6 +18,11 @@ namespace HolidayApp.ApiManagement
             _httpClient.BaseAddress = new Uri(baseurl);
         }
 
+        public void SetBaseUrl(string baseUrl)
+        {
+            _httpClient.BaseAddress = new Uri(baseUrl);
+        }
+
 
         public async Task<TModel> GetAsync<TModel>(string resource)
         {
